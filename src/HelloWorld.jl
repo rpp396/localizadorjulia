@@ -1,2 +1,5 @@
 print("Hola Daniel")
-Hola
+print("Hola Daniel")
+print("Hola Daniel")
+print("Hola Daniel")
+print("Hola Daniel")

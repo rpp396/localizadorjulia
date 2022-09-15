@@ -1,0 +1,10 @@
+Importar Comtrade listo
+Calculo de fasores a partir del Comtrade
+Calculo del tiempo de falta (wavelets o fasores)
+Calculo de loop de falta (wavelets o fasores)
+
+Interfase en Pluto
+    Elegir archivo
+    Asignar canales
+    Mostrar resutados
+    

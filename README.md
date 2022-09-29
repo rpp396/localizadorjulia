@@ -5,6 +5,8 @@ Calcular a que distancia ocurre una falta en una línea o cable de un sistema el
 * Cálculo del tiempo de falta, es decir en que momento del registro fue la falta.
 * Cálculo de distancia a la falta, en Ohms y en metros si se cuenta con el dato de impedancia por kilómetro de la línea o cable.
 
+## Diagrama modular del proyecto
+![alt text](https://github.com/rpp396/localizadorjulia/blob/main/docs/Proyecto-julia.drawio.png "Diagrama modular del proyecto")
 ## 
 ## Algoritmos a implementar
 Para poder realizar la detección de la distancia a la falta, primero es necesario saber el tipo de falta, es decir cuales  de las fases fallaron, por ejemplo:

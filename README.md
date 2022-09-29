@@ -12,7 +12,7 @@ En el caso del curso no se aplicará la interacción con PSSE
 Ya existe en Julia una libreria que toma archivos COMTRADE y devuelve en DataFrame. Esa librería fue hecha para las primeras versiones de Julia y está actualmente desatendida (7 años) por lo que fué necesario crear un fork y modificar algunas cosas para que sea compatible con las versiones actuales que usan proyect.toml y manifest.toml.
 ## Algoritmos a implementar
 ## Obtención de fasores
-Los archivos COMTRADE contienen la información como puntos individuales, pero para poder aplicar los distintos algoritmos, es necesario traducir los datos a fasores. Un método habitual es el de la ventana móvil 
+Los archivos COMTRADE contienen la información de las distintas magnitudes en su forma instantánea, pero para poder aplicar los distintos algoritmos, es necesario traducir los datos a fasores (RMS). Un método habitual es el de la ventana móvil 
 ### Lazo de falta
 Para poder realizar la detección de la distancia a la falta, primero es necesario saber el tipo de falta, es decir cuáles  de las fases fallaron, por ejemplo:
 * Fases A y B (cortocircuito bifásico).

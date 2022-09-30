@@ -7,7 +7,7 @@ Calcular a que distancia ocurre una falta en una línea o cable de un sistema el
 * Mostrar resultados de forma amigable.
 ## Diagrama modular del proyecto
 En el caso del curso no se aplicará la interacción con PSSE
-![alt text](https://github.com/rpp396/localizadorjulia/blob/main/docs/Proyecto-julia.drawio.png "Diagrama modular del proyecto")
+![alt text](docs/assets/Proyecto-julia.drawio.png "Diagrama modular del proyecto")
 ## Pasos previos
 Ya existe en Julia una libreria que toma archivos COMTRADE y devuelve en DataFrame. Esa librería fue hecha para las primeras versiones de Julia y está actualmente desatendida (7 años) por lo que fué necesario crear un fork y modificar algunas cosas para que sea compatible con las versiones actuales que usan proyect.toml y manifest.toml.
 ## Algoritmos a implementar
@@ -22,6 +22,7 @@ Para poder realizar la detección de la distancia a la falta, primero es necesar
 ### Tiempo de falta
 También en necesario saber en que moménto fué la falta
 
+### Ejemplo de DataFrame de datos de un COMTRADE
+![alt text](docs/assets/EjemploValoresInstDF.PNG "Ejemplo de DataFrame de datos de un COMTRADE")
 ### Ejemplo de oscilografia de falta CG en visor COMTRADE
-![alt text](https://github.com/rpp396/localizadorjulia/blob/main/docs/Wavewin%20Ejemplo.jpg "Ejemplo en visor de COMTRADE")
-
+![alt text](docs/assets/Wavewin%20Ejemplo.jpg "Ejemplo de oscilografia de falta CG en visor COMTRADE")

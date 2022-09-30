@@ -5,6 +5,8 @@ Calcular a que distancia ocurre una falta en una línea o cable de un sistema el
 * Cálculo del tiempo de falta, es decir en qué momento del registro fue la falta.
 * Cálculo de distancia a la falta, en Ohm y en metros si se cuenta con el dato de impedancia por kilómetro de la línea o cable, usando varios algoritmos por ejemplo reactancia simple, Takagi, Novosel, Eriksson, etc.
 * Mostrar resultados de forma amigable.
+
+![alt text](docs/assets/unifilar.PNG "Esquema unufular")
 ## Diagrama modular del proyecto
 En el caso del curso no se aplicará la interacción con PSSE
 ![alt text](docs/assets/Proyecto-julia.drawio.png "Diagrama modular del proyecto")

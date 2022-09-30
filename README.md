@@ -1,6 +1,6 @@
 # LocalizadorJulia
 ## Objetivo del proyecto
-Calcular a que distancia ocurre una falta en una línea o cable de un sistema eléctrico de potencia, tomando como insumo un archivo [COMTRADE](https://en.wikipedia.org/wiki/Comtrade) y usando [Julia](https://julialang.org/) para implementar los siguientes algoritmos:
+Calcular a que distancia ocurre una falta en una línea o cable de un sistema eléctrico de potencia, partiendo desde un archivo [COMTRADE](https://en.wikipedia.org/wiki/Comtrade) generado por los IED de protección y usando [Julia](https://julialang.org/) para implementar los siguientes algoritmos:
 * Detección de fase en falta, para identificar que fase o fases fallaron).
 * Cálculo del tiempo de falta, es decir en qué momento del registro fue la falta.
 * Cálculo de distancia a la falta, en Ohm y en metros si se cuenta con el dato de impedancia por kilómetro de la línea o cable, usando varios algoritmos por ejemplo reactancia simple, Takagi, Novosel, Eriksson, etc.

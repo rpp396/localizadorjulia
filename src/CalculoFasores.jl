@@ -4,13 +4,23 @@ del modulo COMTRADE
 =#
 using DataFrames
 using Plots
-function generarSeno(duracion=1000,frecuencia=50,velocidadMuestreo=1000,valorPico=1)
+function generarSeno(;duracion=1000,f=50,fs=1000,valorPico=1)
+    # duración en segundos
+    # f y fs en Hz.  
+    # f frecuencia de la señal periódica
+    # fs frecuencia de muestreo
+    # valorPico es la máxima amplitud
+    #
+
     v=[]
-    for i in 1:(duracion/velocidadMuestreo)
-    push!(v,valorPico*sin(frecuencia*2*pi*i/(velocidadMuestreo)))
+    for i in 1:(duracion*fs)
+    push!(v,valorPico*sin(f*2*pi*i/(fs)))
     end
-    v
+    
 end
 vpp = generarSeno(5000)
 
+
+# Señal de test con armonicos
+ST1=generarSeno(duracion=1,f=50,fs=1500,valorPico=32700)
 

@@ -8,3 +8,14 @@ Interfase en Pluto
     Asignar canales
     Mostrar resutados
     
+
+    ------
+Modulo RP
+
+Modulo DG
+    estimación de frecuencia:
+        parte de algoritmo indicado en papaer An_Open-Loop_Fundamental_and_Harmonic_Phasor_Estimator_for_Single-Phase_Voltage_Signals.pdf
+        
+
+
+Elementos comunes

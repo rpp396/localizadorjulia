@@ -16,11 +16,11 @@ function generarSeno(;duracion=1000,f=50,fs=1000,valorPico=1)
     for i in 1:(duracion*fs)
     push!(v,valorPico*sin(f*2*pi*i/(fs)))
     end
-    
+     
 end
 vpp = generarSeno(5000)
 
 
 # Señal de test con armonicos
-ST1=generarSeno(duracion=1,f=50,fs=1500,valorPico=32700)
+ST1=generarSeno(duracion=1,f=50,fs=1500,valorPico=32700)+0.15*generarSeno(duracion=1,f=100,fs=1500,valorPico=32700)+0.1*generarSeno(duracion=1,f=150,fs=1500,valorPico=32700)
 

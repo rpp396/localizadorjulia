@@ -22,5 +22,17 @@ vpp = generarSeno(5000)
 
 
 # Señal de test con armonicos
-ST1=generarSeno(duracion=1,f=50,fs=1500,valorPico=32700)+0.15*generarSeno(duracion=1,f=100,fs=1500,valorPico=32700)+0.1*generarSeno(duracion=1,f=150,fs=1500,valorPico=32700)
+ST1=generarSeno(duracion=1,f=50,fs=1880,valorPico=32700)+0.15*generarSeno(duracion=1,f=100,fs=1880,valorPico=32700)+0.1*generarSeno(duracion=1,f=150,fs=1880,valorPico=32700)
+ST2=generarSeno(duracion=1,f=50,fs=1880,valorPico=32700)
+ST2 += 0.5*generarSeno(duracion=1,f=100,fs=1880,valorPico=32700)
+ST2 += 0.3*generarSeno(duracion=1,f=150,fs=1880,valorPico=32700)
+ST2 += 0.25*generarSeno(duracion=1,f=200,fs=1880,valorPico=32700)
+ST2 += 0.2*generarSeno(duracion=1,f=250,fs=1880,valorPico=32700)
+ST2 += 0.1*generarSeno(duracion=1,f=300,fs=1880,valorPico=32700)
 
+ST3=generarSeno(duracion=1,f=50,fs=1880,valorPico=32700)
+ST3+= 0.5*generarSeno(duracion=1,f=100,fs=1880,valorPico=32700)
+ST3+= 0.8*generarSeno(duracion=1,f=150,fs=1880,valorPico=32700)
+ST3+= 0.5*generarSeno(duracion=1,f=200,fs=1880,valorPico=32700)
+ST3+= 0.7*generarSeno(duracion=1,f=250,fs=1880,valorPico=32700)
+ST3+= 0.4*generarSeno(duracion=1,f=300,fs=1880,valorPico=32700)

@@ -21,12 +21,11 @@ function NZC(ciclo)
     # busco untervalo de indices de cruce por cero
     
     for i=1:length(ciclo)-1
-        if sign(sign(ciclo[i])*sign(ciclo[i+1]))=-1 
+        if (sign(sign(ciclo[i])*sign(ciclo[i+1])) = -1 )
             #hay cambio de signo, por tanto cruce por cero
             i_ini= i<3 ? 1 : i-2
             i_fin= i+1
-            p_interp = 
-
+            #p_interp =  #que es esto????S
         end
     end
 

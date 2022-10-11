@@ -2,20 +2,32 @@
 # basado en "An Open-Loop Fundamental and Harmonic Phasor Estimator for Single-Phase Voltage Signals" Motakatla Venkateswara Reddy y Ranjana Sodhi
 
 # ahroa trabajo con vectores pero la idea es usar la estructura que definamos para manejar los datos de las señales
-function HFE(datos, n; fn=50, fs=1000)
+function HFE(datos, n::Integer; fn=50, fs=1000)
     # datos un array con las muestras
     # n en que indice del vector tengo que calcular la frecuencia
     # fn frecuencia nominal del sistema
     # fs frecuencia de muestreo
 
-    ciclo=datos[n:ceil(fs/fn)]
+    ciclo=datos[n:Integer(n+ceil(fs/fn))]
+    plot(ciclo)
     cruces=NZC(ciclo)
-    if length(cruces)>2
-        f_est=fs/((cruces[2]-cruces[1])*2)
-    else
-        f_est=fn
-    end
     
+    f_est= length(cruces)>=2 ? fs/((cruces[2]-cruces[1])*2) : fn
+    f_i=f_est
+    grado=1
+    error=1 #valor inicial para comenzar bucle
+    while  (error > 0.0005) & (grado < 9)
+        ciclo=DMF(datos[n:Integer(n+ceil(fs/fn)+grado)],grado)
+        plot!(ciclo)
+        cruces=NZC(ciclo)
+        # println(cruces)
+        f_i= length(cruces)>=2 ? fs/((cruces[2]-cruces[1])*2) : f_i
+        error=abs(f_est-f_i)
+        println("grado ",grado,"   F_est ",f_est, "  f_i ",f_i)
+        f_est=f_i
+        grado+=1
+    end
+    return f_est
 end
 
 using BasicInterpolators: CubicInterpolator
@@ -56,4 +68,16 @@ function NZC(ciclo)
 
     end
     return ZC
+end
+
+function DMF(datos,grado)
+    # implementa filtro de promedio de "grado" puntos consecutivos.
+    # devuelve nuevo vector con los datos filtrados.
+    # tener en cuenta que se devuelve un vector con "grado"-1 elementos menos
+    new_datos=[]
+    for i=1:length(datos)-grado
+        punto=sum(datos[i:(i+grado)]/(grado+1))
+        push!(new_datos,punto)
+    end
+    return new_datos
 end

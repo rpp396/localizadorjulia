@@ -9,7 +9,7 @@ function HFE(datos, n::Integer; fn=50, fs=1000)
     # fs frecuencia de muestreo
 
     ciclo=datos[n:Integer(n+ceil(fs/fn))]
-    plot(ciclo)
+    display(plot(ciclo))
     cruces=NZC(ciclo)
     
     f_est= length(cruces)>=2 ? fs/((cruces[2]-cruces[1])*2) : fn
@@ -18,7 +18,7 @@ function HFE(datos, n::Integer; fn=50, fs=1000)
     error=1 #valor inicial para comenzar bucle
     while  (error > 0.0005) & (grado < 9)
         ciclo=DMF(datos[n:Integer(n+ceil(fs/fn)+grado)],grado)
-        plot!(ciclo)
+        display(plot!(ciclo))
         cruces=NZC(ciclo)
         # println(cruces)
         f_i= length(cruces)>=2 ? fs/((cruces[2]-cruces[1])*2) : f_i

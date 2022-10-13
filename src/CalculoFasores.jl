@@ -4,7 +4,7 @@ del modulo COMTRADE
 =#
 using DataFrames
 using Plots
-function generarSeno(duracion=1000;f=50,fs=1000,valorPico=1)
+function generarSeno(duracion=1000,f=50,fs=1000,valorPico=1)
     # duración en segundos
     # f y fs en Hz.  
     # f frecuencia de la señal periódica

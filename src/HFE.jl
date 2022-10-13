@@ -17,7 +17,7 @@ function HFE(datos, n::Integer; fn=50, fs=1000)
     grado=1
     error=1 #valor inicial para comenzar bucle
     while  (error > 0.0005) & (grado < 9)
-        ciclo=DMF(datos[n:Integer(n+ceil(fs/fn)+grado)],grado)
+        ciclo=DMF(datos[n:Integer(n+ceil(fs/fn)+grado+1)],grado)
         display(plot!(ciclo))
         cruces=NZC(ciclo)
         # println(cruces)
@@ -43,7 +43,7 @@ function NZC(ciclo)
         if sign(sign(ciclo[i])*sign(ciclo[i+1]))==-1 
             #hay cambio de signo, por tanto cruce por cero
             i_a= i<3 ? 1 : i-2
-            i_b= i+1
+            i_b= i_a+3
             p_interp = CubicInterpolator([i_a:i_b...],ciclo[i_a:i_b])
             ϵ=abs(DC)*1E-5+1E-6
             #println("tolerancia ",ϵ)
@@ -60,7 +60,7 @@ function NZC(ciclo)
                     i_b=i_interm
                     pto_b=pto_interm
                 end
-                # println("i_a ",i_a,"  i_b ",i_b, " error ", abs(abs(pto_b)-abs(pto_a)))
+                 # println("i_a ",i_a,"  i_b ",i_b, " error ", abs(abs(pto_b)-abs(pto_a)))
             end
             push!(ZC,(i_a+i_b)/2)
                 

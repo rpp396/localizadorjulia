@@ -21,6 +21,7 @@ end
 
 
 # Señal de test con armonicos
+ST0= generarSeno(duracion=1, f=50, fs=1880, valorPico=32700)
 ST1 = generarSeno(duracion=1, f=50, fs=1880, valorPico=32700) + 0.15 * generarSeno(duracion=1, f=100, fs=1880, valorPico=32700) + 0.1 * generarSeno(duracion=1, f=150, fs=1880, valorPico=32700)
 ST2 = generarSeno(duracion=1, f=50, fs=1880, valorPico=32700)
 ST2 += 0.5 * generarSeno(duracion=1, f=100, fs=1880, valorPico=32700)
